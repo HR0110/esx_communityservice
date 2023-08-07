@@ -3,7 +3,7 @@ game 'gta5'
 
 description 'ESX Community Service To ESXLegacy'
 
-author 'hristiyan_raykov#0'
+author 'hristiyan_raykov#0 (editor)'
 
 version '1.0.0'
 
