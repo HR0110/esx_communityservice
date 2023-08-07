@@ -1,5 +1,5 @@
 # esx_CommunityService
-- THIS RESOURCE IS EDITED BY hristiyan_raykov
+- THIS RESOURCE IS EDITED BY hristiyan_raykov#0
 - An alternative form of punishment and social correction to jail. With this script, you can now send criminals in the central square, to provide community service by cleaning and gardening. Try to escape it and you will get your service extended!
 
 
