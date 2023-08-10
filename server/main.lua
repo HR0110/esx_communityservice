@@ -1,24 +1,24 @@
 ESX = exports.es_extended:getSharedObject()
 
 ESX.RegisterCommand('comserv', 'admin', function(xPlayer, args, showError)
-	if args.playerId and GetPlayerName(args.playerId) ~= nil and tonumber(args.actions) then
-		TriggerEvent('esx_communityservice:sendToCommunityService', tonumber(args.playerId), tonumber(args.actions))
+	if args.playerId and GetPlayerName(args.playerId) ~= nil and args.actions then
+		TriggerEvent('esx_communityservice:sendToCommunityService', args.playerId, args.actions)
 	else
 		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid player ID or actions count.' } } )
 	end
-end, true, {help = TranslateCap('comserv_help'), validate = true, arguments = {{name = 'playerId', help = TranslateCap('comserv_help_arg1'), type = 'string'}, {name = 'actions', help = TranslateCap('comserv_help_arg2'), type = 'string'}}})
+end, true, {help = TranslateCap('comserv_help'), validate = true, arguments = {{name = 'playerId', help = TranslateCap('comserv_help_arg1'), type = 'number'}, {name = 'actions', help = TranslateCap('comserv_help_arg2'), type = 'number'}}})
 
 ESX.RegisterCommand('endcomserv', 'admin', function(xPlayer, args, showError)
 	if args.playerId then
 		if GetPlayerName(args.playerId) ~= nil then
-			TriggerEvent('esx_communityservice:endCommunityServiceCommand', tonumber(args.playerId))
+			TriggerEvent('esx_communityservice:endCommunityServiceCommand', args.playerId)
 		else
 			TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid player ID!' } } )
 		end
 	else
 		TriggerEvent('esx_communityservice:endCommunityServiceCommand', source)
 	end
-end, true, {help = TranslateCap('endcomserv_help'), validate = true, arguments = {{name = 'playerId', help = TranslateCap('endcomserv_help_arg1'), type = 'string'}}})
+end, true, {help = TranslateCap('endcomserv_help'), validate = true, arguments = {{name = 'playerId', help = TranslateCap('endcomserv_help_arg1'), type = 'number'}}})
 
 
 RegisterServerEvent('esx_communityservice:endCommunityServiceCommand')
